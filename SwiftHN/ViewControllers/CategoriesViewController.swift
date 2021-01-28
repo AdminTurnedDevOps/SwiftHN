@@ -27,6 +27,10 @@ class CategoriesViewController: UITableViewController {
     }
 
     override func viewDidLoad() {
+        AppCenter.start(withAppSecret: "35d21b07-3e7a-4390-9a56-1ccfc482270a", services:[
+            Crashes.self
+        ])
+        
         super.viewDidLoad()
         
         let cancelButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItemStyle.Done, target: self, action: "onCancelButton")

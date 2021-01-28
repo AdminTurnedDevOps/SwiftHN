@@ -9,6 +9,11 @@
 import UIKit
 import SwiftHNShared
 import HackerSwifter
+import AppCenter
+import AppCenterAnalytics
+import AppCenterCrashes
+import AppCenter
+import AppCenterCrashes
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +21,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject : AnyObject]?) -> Bool {
+        AppCenter.start(withAppSecret: "35d21b07-3e7a-4390-9a56-1ccfc482270a", services:[
+            Analytics.self,
+            Crashes.self
+            ])
         
         UIApplication.sharedApplication().setMinimumBackgroundFetchInterval(UIApplicationBackgroundFetchIntervalMinimum)
         self.setupStyle()
